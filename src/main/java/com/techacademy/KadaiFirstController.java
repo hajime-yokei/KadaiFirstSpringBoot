@@ -14,10 +14,9 @@ public class KadaiFirstController {
 
     @GetMapping("/dayofweek/{date}")
     public String dispDayOfWeek(@PathVariable String date) {
-        String today = "";
-        LocalDate day = LocalDate.parse(today, DateTimeFormatter.ofPattern(today, null));
+        LocalDate day = LocalDate.parse(date, DateTimeFormatter.ofPattern("yyyyMMdd"));
         DayOfWeek dayOfWeek = day.getDayOfWeek();
-        return today;
+        return dayOfWeek.toString();
     }
 
     @GetMapping("/plus/{val1}/{val2}")
